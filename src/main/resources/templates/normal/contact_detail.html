@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>User Dashboard</title>
+</head>
+<body>
+   <section>
+		<div class="card mr-3 ml-3" th:if=${contact}>
+		  <div class="card-body">
+		     <div class="container text-center">
+		       <img style="height:200px;width:200px;" th:src="@{'/image/'+${contact.image}}" class="my_profile_pic" alt="profile photo"/>
+		        <h3 class="mt-2"><span th:text="${contact.name}"></span></h3>
+		        <table class="table">
+				  <thead>
+				    <tr>
+				      <th scope="col">#ID</th>
+				      <th scope="col">SCM2021<span th:text="${contact.Cid}"></span></th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">Email</th>
+				      <td><span th:text="${contact.email}"></span></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">Phone</th>
+				      <td><span th:text="${contact.phone}"></span></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">Work</th>
+				      <td><span th:text="${contact.work}"></span></td>
+				    </tr>
+				  </tbody>				  
+				</table>
+				<hr>
+				
+				<div class="description mt-3">
+				  <th:block th:utext="${contact.description}"></th:block>
+				</div>
+				
+				<div class="container mt-4">
+				     <form th:action="@{'/user/update-contact/'+${contact.Cid}}" method="post">			      		        
+			            <button type="submit" class="btn btn-success btn-sm mb-2 btn-block">Update</button>			        
+			         </form>
+			        <button th:onclick="|deleteContact(${contact.Cid})|" class="btn btn-danger btn-sm btn-block">Delete</button>
+				</div>
+				
+		     </div>
+		  </div>		  		  
+		</div>
+		
+		<h1 class="bg-danger text-white text-center" th:unless="${contact}">You don't have permission to see this contact...</h1>
+		
+</body>
+</html>
