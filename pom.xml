@@ -14,9 +14,10 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>smartcontactmanager</name>
 	<description>spring boot project</description>
+     
 	
 	<properties>
-		<java.version>7</java.version>
+		<java.version>8</java.version>
 	</properties>
 	
 	<dependencies>

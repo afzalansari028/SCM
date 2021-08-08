@@ -91,7 +91,7 @@ public class UserController {
 		String name = principal.getName();
 		User user = this.userRepository.getUserByUserName(name);
 		
-		//processing adn uploading file
+		//processing and uploading file
 		if(file.isEmpty()) {
 			//if file is empty try our message
 			System.out.println("file is empty");
@@ -302,7 +302,7 @@ public class UserController {
 		
 		int amt = Integer.parseInt(data.get("amount").toString());
 		
-		var client = new RazorpayClient("rzp_test_nUbENGJXdFIX45", "zdH0jJpmIcvvhBVkV1cMfJYR");	
+		 RazorpayClient client = new RazorpayClient("rzp_test_nUbENGJXdFIX45", "zdH0jJpmIcvvhBVkV1cMfJYR");	
 		
 		JSONObject obj = new JSONObject();
 		 obj.put("amount", amt*100);

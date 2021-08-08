@@ -93,8 +93,7 @@ public class ForgotController {
 			}else {
 				//send change password form
 				
-			}
-			
+			}			
 			return "password_change_form";
 		}else {
 			session.setAttribute("message", "You have entered wrong OTP !!");
@@ -112,7 +111,7 @@ public class ForgotController {
 		user.setPassword(this.bCryptPasswordEncoder.encode(newPassword));
 		this.userRepository.save(user);
 		
-		return "redirect:/signin?change=password change successfully..";
+		return "redirect:/signin?change = password change successfully..";
 	}
 	
 }
