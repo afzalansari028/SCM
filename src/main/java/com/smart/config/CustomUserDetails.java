@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.smart.entities.User;
 
+@SuppressWarnings("serial")
 public class CustomUserDetails implements UserDetails {
 	
 	private User user;
@@ -47,7 +48,7 @@ public class CustomUserDetails implements UserDetails {
 
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
+		
 		return true;
 	}
 

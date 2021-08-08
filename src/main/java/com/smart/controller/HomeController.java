@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.smart.dao.UserRepository;
 import com.smart.entities.User;
@@ -75,7 +74,7 @@ public class HomeController {
 			System.out.println("Agreement " + agreement);
 			System.out.println("USER " + user);
 
-			User result = this.userRepository.save(user);
+			 this.userRepository.save(user);
 
 			model.addAttribute("user", new User());
 
